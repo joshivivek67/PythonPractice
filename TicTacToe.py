@@ -4,15 +4,12 @@ class Gameboard:
         self.lst=lst
         
     def PrintBoard(self):
-        print("  |  |  ")
-        print("__ __ __ ")
+        #no Need for that
         print(" "+self.lst[1]+"|"+self.lst[2]+" |"+self.lst[3]+"  ")
         print("__ __ __ ")
         print(" "+self.lst[4]+"|"+self.lst[5]+" |"+self.lst[6]+"  ")
         print("__ __ __ ")
         print(" "+self.lst[7]+"|"+self.lst[8]+" |"+self.lst[9]+"  ")
-        print("__ __ __ ")
-        print("  |  |  ")
     
     def UpdateBoard(self,player,marker):
         self.marker=marker
@@ -81,10 +78,10 @@ while True:
         game_on = True
     else:
         game_on = False
-
+    board.PrintBoard()
     while game_on:
         if turnFirst == player1Name:
-            board.PrintBoard()
+            
             board.UpdateBoard(player1Name,symbolDict[player1Name])
             board.PrintBoard()
             
@@ -99,7 +96,6 @@ while True:
                     turnFirst = player2Name
                 
         else:
-            print(symbolDict[player2Name])
             board.UpdateBoard(player2Name,symbolDict[player2Name])
             board.PrintBoard()
             
